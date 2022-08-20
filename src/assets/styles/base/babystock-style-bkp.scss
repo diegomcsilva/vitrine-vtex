@@ -1,0 +1,430 @@
+@charset "UTF-8";
+/* Compass Mixins */
+/* ==========================================================================
+   Tools
+   ========================================================================== */
+/*
+   Footer Colors
+   ========================================================================== */
+/*
+   Text colors
+   ========================================================================== */
+/* --- BOX BOXING --- */
+/* --- FONT --- */
+/* --- REM --- */
+/* --- SCROLL --- */
+/*
+ * 'rem' is a Sass mixin that converts pixel values to rem values for whatever property is passed to it.
+ * It returns two lines of code — one of the regular pixel values (for IE), and another with the
+ * converted rem values (for everyone else). Special thanks to Chris Epstein (http://chriseppstein.github.com)
+ * and Martin Bavio (http://martinbavio.com) for the help and code!
+ *
+ * Sample input:
+ * .element {
+ *   @include rem('padding',10px 0 2px 5px);
+ * }
+ *
+ * Sample output:
+ * .element {
+ *   padding: 10px 0 2px 5px;
+ *   padding: 1rem 0 0.2rem 0.5rem;
+ * }
+ *
+ */
+/*
+    'Rem' is like 'em', but is only relative to body tag
+*/
+/* Image replacement */
+/* ===========================
+   Tools/Helpers
+   =========================== */
+@media screen and (max-width: 736px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 737px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+/*
+ * Image replacement
+ */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+  *zoom: 1;
+}
+
+/* =Wordpress alignment
+-------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.txtleft {
+  text-align: left;
+}
+
+.txtright {
+  text-align: right;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/* ==========================================================================
+    Components
+   ========================================================================== */
+/* ## COOKIE */
+.cookie-info {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 23px -5px #a7a6a6;
+}
+
+.cookie-body {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding: 20px 0;
+}
+
+.cookie-content {
+  padding-right: 50px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  color: #707070;
+  font-family: "Arial";
+}
+
+.cookie-body > span {
+  padding: 11px 30px;
+  height: 31px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 6px;
+  color: #707070;
+  font-weight: bold;
+  font-family: "Arial";
+  border: 0.22px solid #000000;
+}
+
+.cookie-content a {
+  color: #707070;
+}
+
+@media (max-width: 768px) {
+  .product .mainProductImage .flag {
+    right: 5px;
+  }
+
+  .cookie-info {
+    bottom: 0px;
+    z-index: 100;
+  }
+
+  .cookie-body {
+    flex-direction: column;
+    padding: 36px 20px;
+  }
+
+  .cookie-content {
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 38px;
+  }
+
+  .cookie-body > span {
+    max-width: 150px;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+/* ## COOKIE */
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.pageHeader .bottomHeader {
+  margin-top: 0 !important;
+}
+
+.mainHeader {
+  padding: 12px 0 15px;
+}
+
+.chat-online {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 999;
+  transition: ease transform 0.3s;
+}
+
+@media (max-width: 768px) {
+  .chat-online {
+    right: 20px;
+    width: 48px;
+    bottom: 75px;
+  }
+
+  .chat-online img {
+    width: 100%;
+    height: auto;
+  }
+}
+.chat-online:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Pages
+   ========================================================================== */
+.flagCollection p.flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 3px;
+  text-transform: uppercase;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: none;
+  font-size: 0;
+}
+
+@media screen and (max-width:1024px) {
+  body.catalog .navSidebar.active {
+    z-index: 9999;
+  }
+}
+
+.flagCollection p.flag.black-friday {
+  background-image: url("/arquivos/baby-flag-bf.png");
+  display: block;
+  width: 100%;
+  height: 150px;
+}
+.flagCollection p.flag.frete-gratis-brasil {
+  background-image: url("/arquivos/flag-frete-gratis.png");
+  display: block;
+  width: 65px;
+  height: 65px;
+  right: 6px;
+  top: 6px;
+}
+
+.flag.desconto-10-,
+.flag.desconto-10--a-vista {
+  display: none;
+}
+
+.product .mainProductImage {
+  position: relative;
+}
+.product .mainProductImage .flag {
+  position: absolute;
+  top: 6px;
+  right: calc(6px + 17%);
+  z-index: 2;
+  padding: 3px;
+  text-transform: uppercase;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: none;
+  font-size: 0;
+}
+.product .mainProductImage .flag.frete-gratis-sul-e-sudeste {
+  background-image: url("/arquivos/selo_frete_gratis_sul_e_sudeste.png?v=12");
+  display: block;
+  width: 65px;
+  height: 65px;
+}
+
+.valor-dividido.price-installments, .productPrice .installment {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+/* optional - if don't use, you need to clear float before the end of .page-content */
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

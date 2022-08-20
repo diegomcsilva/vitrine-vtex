@@ -1,0 +1,206 @@
+.container-cart {
+
+  .container-main #orderform-title,
+  &.container-main #cart-title {
+    display: block;
+    color: gray !important;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: 600 !important;
+    font-family: Quicksand, sans-serif;
+    margin: 20px 0;
+  }
+
+
+  .table.cart-items {
+    border: none;
+
+    thead {
+      background: transparent;
+
+      tr {
+        background: #7399BC;
+
+        th {
+          color: #fff;
+          font-weight: 400;
+          text-transform: capitalize;
+          padding: 12px 10;
+          font-family: Quicksand, sans-serif;
+
+          &:first-child {
+            border-radius: 6px 0 0 6px;
+          }
+
+          &:last-child {
+            border-radius: 0 6px 6px 0;
+          }
+
+          &.item-remove {
+            &::before {
+              content: "excluir";
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .cart-items .product-name,
+    .shipping-estimate-date {
+      font-weight: 600;
+      font-family: Quicksand, sans-serif;
+    }
+  }
+
+  .cart-more-options {
+    margin-top: 100px
+  }
+  
+  .coupon-column.summary-coupon-wrap {
+    position: absolute;
+    left: 0;
+    width: 100% !important;
+  }
+
+  .coupon.summary-coupon {
+    margin-left: 0;
+    margin-top: 20px;
+
+    [data-bind="fadeVisible: isUsingCoupon()"] {
+      display: flex !important;
+      align-items: center;
+
+      .coupon-label label {
+        margin-bottom: 0;
+        margin-right: 8px;
+        font-size: 0;
+
+        &::before {
+          content: 'CUPOM';
+          font-size: 14px;
+          color: #545454;
+          font-family: Quicksand, sans-serif;
+        }
+      }
+    }
+  }
+
+  .coupon.summary-coupon #cart-coupon {
+    border: 1px solid #999999;
+    border-radius: 2px !important;
+    font-size: 14px;
+    font-family: Quicksand, sans-serif;
+  }
+
+  #shipping-preview-container {
+    .srp-main-title {
+      font-size: 14px;
+      font-family: Quicksand, sans-serif;
+      color: #545454;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    #ship-postalCode {
+      border: 1px solid #999999;
+      border-radius: 2px !important;
+      font-size: 14px;
+      font-family: Quicksand, sans-serif;
+    }
+
+    #cart-shipping-calculate {
+      border: 2px solid #7399bc;
+      background: transparent;
+      color: #7399bc;
+      font-weight: 800;
+      padding: 0 10px;
+      margin-bottom: 16px;
+    }
+
+    #shipping-calculate-link {
+      border: 2px solid #7399bc;
+      background: transparent;
+      color: #7399bc;
+      font-weight: 800;
+      padding: 5px 15px;
+    }
+
+    .vtex-shipping-preview-0-x-postalCodeForgotten {
+      align-items: flex-end;
+    }
+  }
+
+  .coupon.summary-coupon #cart-coupon-add {
+    border: 2px solid #7399bc;
+    background: transparent;
+    color: #7399bc;
+    font-weight: 800;
+    padding: 0;
+    font-family: Quicksand, sans-serif;
+  }
+
+  .full-cart .summary-totalizers .info {
+    font-size: 16px;
+    font-family: Quicksand, sans-serif;
+    font-weight: 700;
+    padding-right: 40px;
+  }
+
+  .full-cart .summary-totalizers .monetary {
+    font-size: 16px;
+    font-family: Quicksand, sans-serif;
+    font-weight: 500;
+  }
+
+  .full-cart .summary-totalizers tr {
+    &:first-child {
+      border-radius: 6px 0 0 6px;
+    }
+  
+    &:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+  }
+
+  #cart-to-orderform {
+    background: #7399bc;
+    border-radius: 6px;
+    border: none;
+
+    &::after {
+      font-size: 18px;
+      font-family: Quicksand, sans-serif;
+      font-weight: 500;
+      color: #fff;
+      font-weight: 500;
+    }
+  }
+
+  #cart-choose-more-products {
+    border: 3px solid #7399bc;
+    background: transparent;
+    border-radius: 6px;
+
+    &::before {
+      content: "";
+      background-image: url('/arquivos/fast-forward.png');
+      width: 20px;
+      height: 20px;
+      display: block;
+      background-position: center;
+      background-size: contain;
+      transform: rotate(-180deg);
+      margin-right: 5px;
+    }
+
+    &::after {
+      font-size: 18px;
+      font-family: Quicksand, sans-serif;
+      font-weight: 500;
+      color: #7399bc;
+      font-weight: 500;
+    }
+  }
+}

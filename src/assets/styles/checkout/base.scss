@@ -1,0 +1,17 @@
+@import 'https://fonts.googleapis.com/css?family=Quicksand:300,400,500';
+
+.pageFooter .mainFooter h3 {
+  margin: 15px 0 0 !important;
+  margin-bottom: 10px !important;
+}
+
+.pageFooter .mainFooter .contactCol .itemContent .telContact {
+  font-weight: 600;
+  color: gray !important;
+  margin-bottom: 0 !important;
+  margin-top: 6px;
+}
+
+.pageFooter .mainFooter .contactCol .itemContent li:last-child {
+  display: none;
+}
