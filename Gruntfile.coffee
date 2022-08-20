@@ -130,7 +130,7 @@ module.exports = (grunt) ->
           expand: true
           flatten: true
           cwd: 'src/'
-          src: ['assets/style/babystock-style.scss']
+          src: ['assets/style/vitrinedireta-eyesweb.scss']
           dest: 'build/arquivos/'
           ext: '.min.css'
         ],
